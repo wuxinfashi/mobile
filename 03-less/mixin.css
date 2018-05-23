@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*混入*/
+/*类混入*/
+/*混入写法*/
+/*函数混入*/
+/*定义函数:*/
+.w50-f_left {
+  width: 50%;
+  float: right;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+}
+/*# sourceMappingURL=mixin.css.map */

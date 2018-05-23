@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--
+解释touch:
+1. touch是移动端的触摸事件 而且是一组事件
+2. touchstart   当手指触摸屏幕的时候触发
+3. touchmove    当手指在屏幕来回的滑动时候触发
+4. touchend     当手指离开屏幕的时候触发
+5. touchcancel  当被迫终止滑动的时候触发（来电，弹消息）
+6. 利用touch相关事件实现移动端常见滑动效果和移动端常见的手势事件
+-->
+
+<!--
+使用touch:
+1.绑定事件：box.addEventListener('touchstart',function () { });
+2.事件对象：
+名字：TouchList------触摸点（一个手指触摸就是一个触发点，和屏幕的接触点的个数）的集合
+changedTouches    涉及当前(引发)事件的触摸点的列表
+targetTouches     当前对象上所有触摸点的列表(就是在绑定区域内触摸点数量)
+touches          当前屏幕上所有触摸点的列表
+3.触摸点集合在每个事件触发的时候会不会去记录触摸
+changedTouches 每个事件都会记录,手指都离开屏幕之后，touches和targetTouches中将不会再有值，changedTouches还会有一个值，
+此值为最后一个离开屏幕的手指的接触点。
+targetTouches，touches 在离开屏幕的时候无法记录触摸点
+
+touchstart和touchmove使用: e.targetTouches[0].pageX 或 (jquery)e.originalEvent.targetTouches[0].pageX
+touchend使用: e.changedTouches[0].pageX 或 (jquery)e.originalEvent.changedTouches[0].pageX
+3.touchmove事件对象的获取
+想要在touchmove:function(e,参数一)加一个参数，结果直接使用e.preventDefault()就会 e 报错，处理方法为使用arguments[0]获取event参数
+touchmove:function(e,参数一){
+　　var e=arguments[0]
+　　e.preventDefault()
+}
+
+4.分析滑动实现的原理：
+4.1 就是让触摸的元素随着手指的滑动做位置的改变(用哪组坐标都可以,因为计算的是改变,差值)
+4.2 位置的改变：需要当前手指的坐标
+4.3 在每一个触摸点中会记录当前触摸点的坐标 e.touches[0] 第一个触摸点
+前两个个坐标是一样的,screen就是基于屏幕,所以可能超出范围
+4.4 clientX clientY      基于浏览器窗口（视口）
+4.4 pageX   pageY        基于页面（视口）
+4.4 screenX screenY      基于屏幕
+-->
+    <div class="box"></div>
+    <script>
+        window.onload = function () {
+
+            var box = document.getElementsByClassName('box')[0];
+
+            box.addEventListener('touchstart',function (e) {
+                console.log('触摸开始了');
+                console.log(e.touches[0].clientX,e.touches[0].clientY);
+                console.log(e.touches[0].pageX,e.touches[0].pageY);
+                console.log(e.touches[0].screenX,e.touches[0].screenY);
+            })
+                // box.addEventListener('touchmove',function (e) {
+                //     console.log('正在移动');
+                //     console.log(e);
+                // });
+                // box.addEventListener('touchend',function (e) {
+                //     console.log('触摸结束');
+                //     console.log(e);
+                // });
+/*                box.addEventListener('click',function (e) {
+                    console.log('click');
+                    console.log(e);
+                });*/
+
+
+        }
+    </script>
+
+
+
+</body>
+</html>

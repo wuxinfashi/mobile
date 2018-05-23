@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/*变量*/
+//rem适配方案不好维护的原因:可能会新增不同尺寸的设备,设计稿尺寸,预设基准值都可能会变
+//一般来说只需要适配主流设备,一般有十几种
+//通过定义数组的方式来定义主流设备尺寸
+@adapterDeviceList:750px,720px,640px,540px,480px,424px,414px,400px,384px,375px,360px,320px;
+//设计稿尺寸
+@psdWidth:750px;
+//预设基准值
+@baseFontSize:100px;
+//设备的种类
+@len:length(@adapterDeviceList);
+//主体颜色
+@snColor:#fabc09;

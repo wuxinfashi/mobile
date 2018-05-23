@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机京东页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <script src="js/zepto.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div class="jd_container">
+    <!--顶部搜索:-->
+    <!--采用双飞翼布局,两边内容宽度固定,中间宽度自适应,可以使用流式布局-->
+    <!--解决方案,采用padding将左右需要占位的元素避开-->
+    <header class="jd_search">
+        <div class="jd_search_box">
+            <a href="#" class="icon_logo"></a>
+            <form action="#">
+                <span class="icon_search"></span>
+                <input type="search" placeholder="搜索"></form>
+            <a href="#" class="login">登录</a>
+        </div>
+    </header>
+
+    <!--轮播图:-->
+    <div class="jd_banner">
+        <!--如果ul不加上clearFix就没有高度,摸不着,触发不了touch事件-->
+        <ul class="clearFix">
+            <!--无缝轮播图,因为不知道会往哪边划,所以需要最前最后都加一张:-->
+            <li><a href="#"><img src="images/l8.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l6.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l7.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l8.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/l1.jpg" alt=""></a></li>
+        </ul>
+        <!--点容器:-->
+        <ul>
+            <li class="now"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <nav class="jd_nav">
+        <ul class="clearFix">
+            <li><a href="#"><img src="images/nav0.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav1.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav2.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav3.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav4.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav5.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav6.png" alt=""><p>分类</p></a></li>
+            <li><a href="#"><img src="images/nav7.png" alt=""><p>分类</p></a></li>
+        </ul>
+    </nav>
+
+    <div class="jd_product">
+        <!--秒杀区域:-->
+        <section class="jd_product_box sk">
+            <div class="tit nb">
+                <!--包含了三个区域 图标 文字 时间-->
+                <div class="f_left">
+                    <span class="icon"></span>
+                    <span class="name">掌上秒杀</span>
+                    <div class="time">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="f_right"><a class="m_r10" href="#">更多&gt;</a></div>
+            </div>
+            <!--秒杀商品区域:-->
+            <div class="con">
+                <!--如果不清除浮动价格会超出底线-->
+                <ul class="pro clearFix">
+                    <li>
+                        <a href="#"><img src="images/detail01.jpg" alt=""></a>
+                        <p class="nowPrice">&yen;10.00</p>
+                        <p class="oldPrice">&yen;100.00</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/detail02.jpg" alt=""></a>
+                        <p class="nowPrice">&yen;10.00</p>
+                        <p class="oldPrice">&yen;100.00</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/detail01.jpg" alt=""></a>
+                        <p class="nowPrice">&yen;10.00</p>
+                        <p class="oldPrice">&yen;100.00</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="jd_product_box">
+            <!--只要子元素有浮动,父元素都应该加上clearFix来清除浮动,否则盒子高度会坍塌-->
+            <div class="tit"><h3>京东超市</h3></div>
+            <div class="con clearFix">
+                <a href="#" class="w_50P f_left br"><img src="images/cp1.jpg" alt=""></a>
+                <a href="#" class="w_50P f_right bb"><img src="images/cp2.jpg" alt=""></a>
+                <a href="#" class="w_50P f_right"><img src="images/cp3.jpg" alt=""></a>
+            </div>
+        </section>
+        <section class="jd_product_box">
+            <div class="tit"><h3>京东自营</h3></div>
+            <div class="con clearFix">
+                <a href="#" class="f_right w_50P bl"><img src="images/cp4.jpg" alt=""></a>
+                <a href="#" class="w_50P f_left bb"><img src="images/cp5.jpg" alt=""></a>
+                <a href="#" class="w_50P f_left"><img src="images/cp6.jpg" alt=""></a>
+            </div>
+        </section>
+        <section class="jd_product_box">
+            <div class="tit"><h3>京东热门</h3></div>
+            <div class="con clearFix">
+                <a href="#" class="w_50P f_left br"><img src="images/cp1.jpg" alt=""></a>
+                <a href="#" class="w_50P f_right bb"><img src="images/cp2.jpg" alt=""></a>
+                <a href="#" class="w_50P f_right"><img src="images/cp3.jpg" alt=""></a>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<!--<script>-->
+    <!--var $banner = $('.jd_banner');-->
+    <!--var banner =$banner[0];-->
+    <!--console.log(banner.offsetHeight);-->
+
+<!--</script>-->
+
+
+
+
+
+
+</body>
+</html>

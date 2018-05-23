@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*这样的注释在css中也可以使用,在编译过程中会生成在css中*/
+//这样的注释方式在css中没有,所以不会生成
+
+/*变量*/
+/*变量声明前缀为@,:是等于的意思,必须用;结束*/
+/*不能以数字开头,不能包含特殊字符,对大小写敏感*/
+@mainColor:#e92322;
+@className:box;
+
+div{
+  background: @mainColor;
+}
+a:hover{
+  color: @mainColor;
+}
+//如果要进行字符串拼接:
+.@{className}{
+  color: @mainColor;
+}

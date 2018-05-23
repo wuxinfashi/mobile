@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*这样的注释在css中也可以使用,在编译过程中会生成在css中*/
+/*变量*/
+/*变量声明前缀为@,:是等于的意思,必须用;结束*/
+/*不能以数字开头,不能包含特殊字符,对大小写敏感*/
+div {
+  background: #e92322;
+}
+a:hover {
+  color: #e92322;
+}
+.box {
+  color: #e92322;
+}
+/*# sourceMappingURL=variables.less.css.map */

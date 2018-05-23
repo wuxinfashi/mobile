@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/*混入*/
+/*类混入*/
+/*混入写法*/
+/*函数混入*/
+/*定义函数:*/
+.w50-f_left {
+  width: 50%;
+  float: right;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+}
+/*嵌套语法*/
+.wjs_app {
+  display: block;
+  /*需要连接的情况,如伪元素或伪类*/
+}
+.wjs_app img {
+  display: none;
+}
+.wjs_app:hover img {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  left: 50%;
+  z-index: 10000;
+}
+.wjs_app > div {
+  display: block;
+}
+/*这样的注释在css中也可以使用,在编译过程中会生成在css中*/
+/*变量*/
+/*变量声明前缀为@,:是等于的意思,必须用;结束*/
+/*不能以数字开头,不能包含特殊字符,对大小写敏感*/
+div {
+  background: #e92322;
+}
+a:hover {
+  color: #e92322;
+}
+.box {
+  color: #e92322;
+}
+/*函数运算*/
+ul {
+  width: 700%;
+}
+ul li {
+  width: 14.28571429%;
+  color: #ff80ff;
+  background: #262626;
+  /*内置函数*/
+  border-color: #ff6666;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+//less没有for循环语法
+//使用函数的递归,根据数组长度去停止当前的循环
+//给函数执行附加条件
+//需要索引来判断
+//需要序号来判断 通过序号遍历(从1开始)
+.adapterMixin(@index) when ( @index > 0){
+  @media (min-width: extract(@adapterDeviceList,@index)){
+    html{
+      font-size: @baseFontSize / @psdWidth * extract(@adapterDeviceList,@index);
+    }
+  }
+  .adapterMixin( @index - 1);
+}

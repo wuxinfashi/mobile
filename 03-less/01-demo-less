@@ -1,0 +1,7 @@
+@color:#ccc;
+a{
+  color:@color;
+}
+div{
+  color:@color;
+}
